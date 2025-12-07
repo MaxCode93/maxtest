@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <!-- Círculo exterior (globo) -->
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="?attr/colorOnSurface"
+        android:strokeWidth="1.5"
+        android:pathData="M12,2
+                          A10,10 0 1,1 12,22
+                          A10,10 0 1,1 12,2" />
+
+    <!-- Meridiano vertical -->
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="?attr/colorOnSurface"
+        android:strokeWidth="1.5"
+        android:pathData="M12,2
+                          C9,5 8,9 8,12
+                          C8,15 9,19 12,22
+                          C15,19 16,15 16,12
+                          C16,9 15,5 12,2" />
+
+    <!-- Paralelos horizontales -->
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="?attr/colorOnSurface"
+        android:strokeWidth="1.5"
+        android:pathData="M4,9
+                          C8,10 16,10 20,9" />
+
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="?attr/colorOnSurface"
+        android:strokeWidth="1.5"
+        android:pathData="M4,15
+                          C8,14 16,14 20,15" />
+
+</vector>

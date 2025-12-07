@@ -1,0 +1,1207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="0dp"
+        android:paddingBottom="16dp">
+
+        <!-- Sección: Display (Pantalla) -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/settings_display"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_primary"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="10dp" />
+
+        <!-- Item: Pantalla de Inicio -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="2dp"
+            app:cardBackgroundColor="@color/card_background">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <!-- Header -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="12dp">
+
+                    <ImageView
+                        android:layout_width="44dp"
+                        android:layout_height="44dp"
+                        android:src="@drawable/ic_home"
+                        android:contentDescription="@string/settings_start_screen"
+                        app:tint="?attr/colorPrimary"
+                        android:layout_marginEnd="8dp" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/settings_start_screen"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/text_primary" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/settings_start_screen_desc"
+                            android:textSize="12sp"
+                            android:textColor="@color/text_secondary"
+                            android:layout_marginTop="2dp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!-- ChipGroup: Pantalla de Inicio -->
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/chipGroupStartScreen"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:singleSelection="true"
+                    app:selectionRequired="true"
+                    app:chipSpacing="8dp">
+
+                    <!-- Chip: Inicio -->
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipScreenHome"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/chip_ripple_background"
+                        android:checkable="true"
+                        android:text="@string/settings_screen_home"
+                        android:textColor="@color/text_primary"
+                        android:textSize="13sp"
+                        app:chipIcon="@drawable/ic_home"
+                        app:iconStartPadding="6dp"
+                        app:chipIconTint="?attr/colorPrimary"
+                        app:chipStrokeWidth="2dp"
+                        app:chipStrokeColor="@drawable/chip_stroke_color_selector"
+                        app:chipBackgroundColor="@drawable/chip_background_selector"
+                        app:checkedIconVisible="true"
+                        app:chipCornerRadius="20dp" />
+
+                    <!-- Chip: Firewall -->
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipScreenFirewall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/chip_ripple_background"
+                        android:checkable="true"
+                        android:text="@string/settings_screen_firewall"
+                        android:textColor="@color/text_primary"
+                        android:textSize="13sp"
+                        app:chipIcon="@drawable/ic_firewall_security"
+                        app:iconStartPadding="6dp"
+                        app:chipIconTint="?attr/colorPrimary"
+                        app:chipStrokeWidth="2dp"
+                        app:chipStrokeColor="@drawable/chip_stroke_color_selector"
+                        app:chipBackgroundColor="@drawable/chip_background_selector"
+                        app:checkedIconVisible="true"
+                        app:chipCornerRadius="20dp" />
+
+                </com.google.android.material.chip.ChipGroup>
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Item: Tema (Automático/Claro/Oscuro) -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="2dp"
+            app:cardBackgroundColor="@color/card_background">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <!-- Header del tema -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="5dp">
+
+                    <ImageView
+                        android:layout_width="44dp"
+                        android:layout_height="44dp"
+                        android:src="@drawable/ic_theme_auto"
+                        android:contentDescription="@string/settings_app_theme"
+                        app:tint="?attr/colorPrimary"
+                        android:layout_marginEnd="8dp" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/settings_app_theme"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/text_primary" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/settings_app_theme_desc"
+                            android:textSize="12sp"
+                            android:textColor="@color/text_secondary"
+                            android:layout_marginTop="2dp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!-- ChipGroup para Selector de Tema -->
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/chipGroupTheme"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    app:singleSelection="true"
+                    app:selectionRequired="true"
+                    app:chipSpacing="8dp">
+
+                    <!-- Chip: Automático -->
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipThemeAuto"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/chip_ripple_background"
+                        android:checkable="true"
+                        android:text="@string/settings_theme_auto"
+                        android:textColor="@color/text_primary"
+                        android:textSize="13sp"
+                        app:chipIcon="@drawable/ic_theme_auto"
+                        app:iconStartPadding="6dp"
+                        app:chipIconTint="?attr/colorPrimary"
+                        app:chipStrokeWidth="2dp"
+                        app:chipStrokeColor="@drawable/chip_stroke_color_selector"
+                        app:chipBackgroundColor="@drawable/chip_background_selector"
+                        app:checkedIconVisible="true"
+                        app:chipCornerRadius="20dp" />
+
+                    <!-- Chip: Claro -->
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipThemeLight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/chip_ripple_background"
+                        android:checkable="true"
+                        android:text="@string/settings_theme_light"
+                        android:textColor="@color/text_primary"
+                        android:textSize="13sp"
+                        app:chipIcon="@drawable/ic_theme_light"
+                        app:iconStartPadding="6dp"
+                        app:chipIconTint="?attr/colorPrimary"
+                        app:chipStrokeWidth="2dp"
+                        app:chipStrokeColor="@drawable/chip_stroke_color_selector"
+                        app:chipBackgroundColor="@drawable/chip_background_selector"
+                        app:checkedIconVisible="true"
+                        app:chipCornerRadius="20dp" />
+
+                    <!-- Chip: Oscuro -->
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipThemeDark"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/chip_ripple_background"
+                        android:checkable="true"
+                        android:text="@string/settings_theme_dark"
+                        android:textColor="@color/text_primary"
+                        android:textSize="13sp"
+                        app:chipIcon="@drawable/ic_theme_dark"
+                        app:iconStartPadding="6dp"
+                        app:chipIconTint="?attr/colorPrimary"
+                        app:chipStrokeWidth="2dp"
+                        app:chipStrokeColor="@drawable/chip_stroke_color_selector"
+                        app:chipBackgroundColor="@drawable/chip_background_selector"
+                        app:checkedIconVisible="true"
+                        app:chipCornerRadius="20dp" />
+
+                </com.google.android.material.chip.ChipGroup>
+
+                <!-- Subsección: Color Primario -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/color_primario"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_primary"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="8dp" />
+
+                <!-- ChipGroup para Selector de Color Primario -->
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/chipGroupPrimaryColor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:singleSelection="true"
+                    app:selectionRequired="true"
+                    app:chipSpacing="4dp">
+
+                    <!-- Chip: Default -->
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipColorDefault"
+                        android:layout_width="36dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/chip_ripple_background"
+                        android:checkable="true"
+                        android:text=""
+                        android:textColor="@color/text_primary"
+                        android:textSize="13sp"
+                        app:chipIcon="@drawable/ic_check"
+                        app:chipIconTint="@color/white"
+                        app:chipStrokeWidth="2dp"
+                        app:chipStrokeColor="@drawable/chip_stroke_color_selector"
+                        app:chipBackgroundColor="@drawable/chip_background_selector"
+                        app:checkedIconVisible="true"
+                        app:chipCornerRadius="20dp"
+                        android:backgroundTint="#FF5722" />
+
+                    <!-- Chip: Rojo -->
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipColorRed"
+                        android:layout_width="36dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/chip_ripple_background"
+                        android:checkable="true"
+                        android:text=""
+                        android:textColor="@color/text_primary"
+                        android:textSize="13sp"
+                        app:chipIcon="@drawable/ic_check"
+                        app:chipIconTint="@color/white"
+                        app:chipStrokeWidth="2dp"
+                        app:chipStrokeColor="@drawable/chip_stroke_color_selector"
+                        app:chipBackgroundColor="@drawable/chip_background_selector"
+                        app:checkedIconVisible="true"
+                        app:chipCornerRadius="20dp"
+                        android:backgroundTint="#F44336" />
+
+                    <!-- Chip: Verde -->
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipColorGreen"
+                        android:layout_width="36dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/chip_ripple_background"
+                        android:checkable="true"
+                        android:text=""
+                        android:textColor="@color/text_primary"
+                        android:textSize="13sp"
+                        app:chipIcon="@drawable/ic_check"
+                        app:chipIconTint="@color/white"
+                        app:chipStrokeWidth="2dp"
+                        app:chipStrokeColor="@drawable/chip_stroke_color_selector"
+                        app:chipBackgroundColor="@drawable/chip_background_selector"
+                        app:checkedIconVisible="true"
+                        app:chipCornerRadius="20dp"
+                        android:backgroundTint="#4CAF50" />
+
+                    <!-- Chip: Amarillo -->
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipColorYellow"
+                        android:layout_width="36dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/chip_ripple_background"
+                        android:checkable="true"
+                        android:text=""
+                        android:textColor="@color/text_primary"
+                        android:textSize="13sp"
+                        app:chipIcon="@drawable/ic_check"
+                        app:chipIconTint="@color/white"
+                        app:chipStrokeWidth="2dp"
+                        app:chipStrokeColor="@drawable/chip_stroke_color_selector"
+                        app:chipBackgroundColor="@drawable/chip_background_selector"
+                        app:checkedIconVisible="true"
+                        app:chipCornerRadius="20dp"
+                        android:backgroundTint="#FFEB3B" />
+
+                    <!-- Chip: Morado -->
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipColorPurple"
+                        android:layout_width="36dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/chip_ripple_background"
+                        android:checkable="true"
+                        android:text=""
+                        android:textColor="@color/text_primary"
+                        android:textSize="13sp"
+                        app:chipIcon="@drawable/ic_check"
+                        app:chipIconTint="@color/white"
+                        app:chipStrokeWidth="2dp"
+                        app:chipStrokeColor="@drawable/chip_stroke_color_selector"
+                        app:chipBackgroundColor="@drawable/chip_background_selector"
+                        app:checkedIconVisible="true"
+                        app:chipCornerRadius="20dp"
+                        android:backgroundTint="#9C27B0" />
+
+                    <!-- Chip: Naranja -->
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipColorOrange"
+                        android:layout_width="36dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/chip_ripple_background"
+                        android:checkable="true"
+                        android:text=""
+                        android:textColor="@color/text_primary"
+                        android:textSize="13sp"
+                        app:chipIcon="@drawable/ic_check"
+                        app:chipIconTint="@color/white"
+                        app:chipStrokeWidth="2dp"
+                        app:chipStrokeColor="@drawable/chip_stroke_color_selector"
+                        app:chipBackgroundColor="@drawable/chip_background_selector"
+                        app:checkedIconVisible="true"
+                        app:chipCornerRadius="20dp"
+                        android:backgroundTint="#FF9800" />
+
+                    <!-- Chip: Azul -->
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipColorBlue"
+                        android:layout_width="36dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/chip_ripple_background"
+                        android:checkable="true"
+                        android:text=""
+                        android:textColor="@color/text_primary"
+                        android:textSize="13sp"
+                        app:chipIcon="@drawable/ic_check"
+                        app:chipIconTint="@color/white"
+                        app:chipStrokeWidth="2dp"
+                        app:chipStrokeColor="@drawable/chip_stroke_color_selector"
+                        app:chipBackgroundColor="@drawable/chip_background_selector"
+                        app:checkedIconVisible="true"
+                        app:chipCornerRadius="20dp"
+                        android:backgroundTint="#2196F3" />
+
+                </com.google.android.material.chip.ChipGroup>
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <!-- Sección: Inicio con Sistema -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/auto_iniciar"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_primary"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp" />
+
+        <!-- Item: Inicio con Sistema (Switch Principal + RadioGroup Condicional) -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="2dp"
+            app:cardBackgroundColor="@color/card_background">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <!-- Header con Switch Principal -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="16dp">
+
+                    <ImageView
+                        android:layout_width="44dp"
+                        android:layout_height="44dp"
+                        android:src="@drawable/ic_settings"
+                        android:contentDescription="@string/settings_startup"
+                        app:tint="?attr/colorPrimary"
+                        android:layout_marginEnd="8dp" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/settings_startup"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/text_primary" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/settings_startup_desc"
+                            android:textSize="12sp"
+                            android:textColor="@color/text_secondary"
+                            android:layout_marginTop="2dp" />
+
+                    </LinearLayout>
+
+                    <ToggleButton
+                        android:id="@+id/switchStartupSystem"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:textOff="@string/no"
+                        android:textOn="@string/si"
+                        style="@style/Widget.FireNetStats.ToggleButton"
+                        android:drawableStart="@drawable/ic_power_on"
+                        android:drawableTint="@color/text_primary" />
+
+                </LinearLayout>
+
+                <!-- Subsección: RadioGroup (Visible solo si switch está ON) -->
+                <LinearLayout
+                    android:id="@+id/startupComponentsContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    android:background="@drawable/rounded_container_background"
+                    android:padding="12dp"
+                    android:layout_marginTop="8dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/settings_startup_components"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_primary"
+                        android:layout_marginBottom="8dp" />
+
+                    <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/chipGroupStartupComponents"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:singleSelection="true"
+                        app:selectionRequired="true"
+                        app:chipSpacing="8dp">
+
+                        <!-- Chip: Solo Widget -->
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chipStartupWidget"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/chip_ripple_background"
+                            android:checkable="true"
+                            android:text="@string/settings_startup_widget"
+                            android:textColor="@color/text_primary"
+                            android:textSize="13sp"
+                            app:chipIcon="@drawable/ic_enable_floating_widget"
+                            app:iconStartPadding="6dp"
+                            app:chipIconTint="?attr/colorPrimary"
+                            app:chipStrokeWidth="2dp"
+                            app:chipStrokeColor="@drawable/chip_stroke_color_selector"
+                            app:chipBackgroundColor="@drawable/chip_background_selector"
+                            app:chipCornerRadius="20dp" />
+
+                        <!-- Chip: Solo Firewall -->
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chipStartupFirewall"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/chip_ripple_background"
+                            android:checkable="true"
+                            android:text="@string/settings_startup_firewall"
+                            android:textColor="@color/text_primary"
+                            android:textSize="13sp"
+                            app:chipIcon="@drawable/ic_firewall_security"
+                            app:iconStartPadding="6dp"
+                            app:chipIconTint="?attr/colorPrimary"
+                            app:chipStrokeWidth="2dp"
+                            app:chipStrokeColor="@drawable/chip_stroke_color_selector"
+                            app:chipBackgroundColor="@drawable/chip_background_selector"
+                            app:chipCornerRadius="20dp" />
+
+                        <!-- Chip: Ambos -->
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chipStartupBoth"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/chip_ripple_background"
+                            android:checkable="true"
+                            android:text="@string/settings_startup_both"
+                            android:textColor="@color/text_primary"
+                            android:textSize="13sp"
+                            app:chipIcon="@drawable/ic_settings"
+                            app:iconStartPadding="6dp"
+                            app:chipIconTint="?attr/colorPrimary"
+                            app:chipStrokeWidth="2dp"
+                            app:chipStrokeColor="@drawable/chip_stroke_color_selector"
+                            app:chipBackgroundColor="@drawable/chip_background_selector"
+                            app:chipCornerRadius="20dp" />
+
+                    </com.google.android.material.chip.ChipGroup>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Sección: Firewall Settings -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/firewall_title"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_primary"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="10dp" />
+
+        <!-- Item 1: Intercept Notifications -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="2dp"
+            app:cardBackgroundColor="@color/card_background">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="16dp">
+
+                <ImageView
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:src="@drawable/ic_notifications"
+                    android:contentDescription="@string/intercept_notifications_setting"
+                    app:tint="?attr/colorPrimary"
+                    android:layout_marginEnd="8dp" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/intercept_notifications_setting"
+                            android:textColor="@color/text_primary"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="@string/intercept_notifications_desc"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+                    <!-- Switch on the right -->
+                    <ToggleButton
+                        android:id="@+id/switchInterceptNotifications"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:textOff="@string/no"
+                        android:textOn="@string/si"
+                        style="@style/Widget.FireNetStats.ToggleButton"
+                        android:drawableStart="@drawable/ic_notifications"
+                        android:drawableTint="@color/text_primary" />
+
+                </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Item 2: VPN Siempre Activo -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="2dp"
+            app:cardBackgroundColor="@color/card_background">
+
+            <LinearLayout
+                android:id="@+id/vpnAlwaysOnContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="16dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?attr/selectableItemBackground">
+
+                <ImageView
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:src="@drawable/ic_firewall_security"
+                    android:contentDescription="@string/vpn_always_on_setting"
+                    app:tint="?attr/colorPrimary"
+                    android:layout_marginEnd="8dp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/vpn_always_on_setting"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_primary" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/vpn_always_on_desc"
+                        android:textSize="12sp"
+                        android:textColor="@color/text_secondary"
+                        android:layout_marginTop="2dp" />
+
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_chevron_right"
+                    android:contentDescription="@null"
+                    app:tint="@color/text_secondary"
+                    android:layout_marginStart="8dp" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Sección: Permisos y Acceso -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/permissions_section"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_primary"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="10dp" />
+
+        <!-- Card de Permisos -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="2dp"
+            app:cardBackgroundColor="@color/card_background">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="0dp">
+
+                <!-- Ubicación Precisa -->
+                <LinearLayout
+                    android:id="@+id/permissionLocationFineRow"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:padding="12dp"
+                    android:background="?attr/selectableItemBackground">
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_location"
+                        android:contentDescription="@string/permission_location_fine"
+                        app:tint="?attr/colorPrimary"
+                        android:layout_marginEnd="12dp" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/permission_location_fine"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/text_primary" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/permission_location_fine_desc"
+                            android:textSize="11sp"
+                            android:textColor="@color/text_secondary"
+                            android:layout_marginTop="2dp" />
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/permissionLocationFineStatus"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_check"
+                        android:contentDescription="@null"
+                        app:tint="@color/firewall_green"
+                        android:layout_marginEnd="8dp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/permissionLocationFineButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="32dp"
+                        android:paddingStart="8dp"
+                        android:paddingEnd="8dp"
+                        android:text="@string/permission_grant"
+                        android:textSize="9sp"
+                        android:visibility="gone"
+                        app:cornerRadius="4dp"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        tools:ignore="SmallSp" />
+
+                </LinearLayout>
+
+                <!-- Separador -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="?attr/dividerColor"
+                    android:alpha="0.3"
+                    android:layout_marginStart="44dp"
+                    android:layout_marginEnd="12dp" />
+
+                <!-- Ubicación General -->
+                <LinearLayout
+                    android:id="@+id/permissionLocationCoarseRow"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:padding="12dp"
+                    android:background="?attr/selectableItemBackground">
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_location"
+                        android:contentDescription="@string/permission_location_coarse"
+                        app:tint="?attr/colorPrimary"
+                        android:layout_marginEnd="12dp" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/permission_location_coarse"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/text_primary" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/permission_location_coarse_desc"
+                            android:textSize="11sp"
+                            android:textColor="@color/text_secondary"
+                            android:layout_marginTop="2dp" />
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/permissionLocationCoarseStatus"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_check"
+                        android:contentDescription="@null"
+                        app:tint="@color/firewall_green"
+                        android:layout_marginEnd="8dp"
+                        tools:ignore="TooManyViews" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/permissionLocationCoarseButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="32dp"
+                        android:paddingStart="8dp"
+                        android:paddingEnd="8dp"
+                        android:text="@string/permission_grant"
+                        android:textSize="9sp"
+                        android:visibility="gone"
+                        app:cornerRadius="4dp"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        tools:ignore="SmallSp" />
+
+                </LinearLayout>
+
+                <!-- Separador -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="?attr/dividerColor"
+                    android:alpha="0.3"
+                    android:layout_marginStart="44dp"
+                    android:layout_marginEnd="12dp" />
+
+                <!-- Permiso de Datos de Uso -->
+                <LinearLayout
+                    android:id="@+id/permissionUsageStatsRow"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:padding="12dp"
+                    android:background="?attr/selectableItemBackground">
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_history"
+                        android:contentDescription="@string/permission_usage_stats"
+                        app:tint="?attr/colorPrimary"
+                        android:layout_marginEnd="12dp" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/permission_usage_stats"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/text_primary" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/permission_usage_stats_desc"
+                            android:textSize="11sp"
+                            android:textColor="@color/text_secondary"
+                            android:layout_marginTop="2dp" />
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/permissionUsageStatsStatus"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_check"
+                        android:contentDescription="@null"
+                        app:tint="@color/firewall_green"
+                        android:layout_marginEnd="8dp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/permissionUsageStatsButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="32dp"
+                        android:paddingStart="8dp"
+                        android:paddingEnd="8dp"
+                        android:text="@string/permission_grant"
+                        android:textSize="9sp"
+                        android:visibility="gone"
+                        app:cornerRadius="4dp"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        tools:ignore="SmallSp" />
+
+                </LinearLayout>
+
+                <!-- Separador -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="?attr/dividerColor"
+                    android:alpha="0.3"
+                    android:layout_marginStart="44dp"
+                    android:layout_marginEnd="12dp" />
+
+                <!-- Permiso VPN -->
+                <LinearLayout
+                    android:id="@+id/permissionVpnRow"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:padding="12dp"
+                    android:background="?attr/selectableItemBackground">
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_lock"
+                        android:contentDescription="@string/permission_vpn"
+                        app:tint="?attr/colorPrimary"
+                        android:layout_marginEnd="12dp" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/permission_vpn"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/text_primary" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/permission_vpn_desc"
+                            android:textSize="11sp"
+                            android:textColor="@color/text_secondary"
+                            android:layout_marginTop="2dp" />
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/permissionVpnStatus"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_check"
+                        android:contentDescription="@null"
+                        app:tint="@color/firewall_green"
+                        android:layout_marginEnd="8dp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/permissionVpnButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="32dp"
+                        android:paddingStart="8dp"
+                        android:paddingEnd="8dp"
+                        android:text="@string/permission_grant"
+                        android:textSize="9sp"
+                        android:visibility="gone"
+                        app:cornerRadius="4dp"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        tools:ignore="SmallSp" />
+
+                </LinearLayout>
+
+                <!-- Separador -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="?attr/dividerColor"
+                    android:alpha="0.3"
+                    android:layout_marginStart="44dp"
+                    android:layout_marginEnd="12dp" />
+
+                <!-- Ventanas Superpuestas -->
+                <LinearLayout
+                    android:id="@+id/permissionOverlayRow"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:padding="12dp"
+                    android:background="?attr/selectableItemBackground">
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_info"
+                        android:contentDescription="@string/permission_overlay"
+                        app:tint="?attr/colorPrimary"
+                        android:layout_marginEnd="12dp" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/permission_overlay"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/text_primary" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/permission_overlay_desc"
+                            android:textSize="11sp"
+                            android:textColor="@color/text_secondary"
+                            android:layout_marginTop="2dp" />
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/permissionOverlayStatus"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_check"
+                        android:contentDescription="@null"
+                        app:tint="@color/firewall_green"
+                        android:layout_marginEnd="8dp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/permissionOverlayButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="32dp"
+                        android:paddingStart="8dp"
+                        android:paddingEnd="8dp"
+                        android:text="@string/permission_grant"
+                        android:textSize="9sp"
+                        android:visibility="gone"
+                        app:cornerRadius="4dp"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        tools:ignore="SmallSp" />
+
+                </LinearLayout>
+
+                <!-- Divisor -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="?attr/dividerColor"
+                    android:alpha="0.3"
+                    android:layout_marginStart="44dp"
+                    android:layout_marginEnd="12dp" />
+
+                <!-- Notificaciones (Android 13+) -->
+                <LinearLayout
+                    android:id="@+id/permissionNotificationsRow"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:padding="12dp"
+                    android:background="?attr/selectableItemBackground">
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_notifications"
+                        android:contentDescription="@string/notificaciones"
+                        app:tint="?attr/colorPrimary"
+                        android:layout_marginEnd="12dp" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/notificaciones"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/text_primary" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/mostrar_intentos_de_acceso_a_internet"
+                            android:textSize="11sp"
+                            android:textColor="@color/text_secondary"
+                            android:layout_marginTop="2dp" />
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/permissionNotificationsStatus"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_check"
+                        android:contentDescription="@null"
+                        app:tint="@color/firewall_green"
+                        android:layout_marginEnd="8dp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/permissionNotificationsButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="32dp"
+                        android:paddingStart="8dp"
+                        android:paddingEnd="8dp"
+                        android:text="@string/permission_grant"
+                        android:textSize="9sp"
+                        android:visibility="gone"
+                        app:cornerRadius="4dp"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        tools:ignore="SmallSp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+
+</ScrollView>

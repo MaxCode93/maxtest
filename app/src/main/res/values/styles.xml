@@ -1,0 +1,40 @@
+<resources>
+
+	<style name="SearchInputField" parent="@android:style/Widget.EditText">
+		<item name="android:layout_width">match_parent</item>
+		<item name="android:layout_height">40dp</item>
+		<item name="android:background">@drawable/search_background</item>
+		<item name="android:hint">Buscar app...</item>
+		<item name="android:paddingStart">12dp</item>
+		<item name="android:paddingEnd">40dp</item>
+		<item name="android:drawablePadding">8dp</item>
+		<item name="android:textColor">@color/text_primary</item>
+		<item name="android:textColorHint">@color/text_secondary</item>
+		<item name="android:textSize">13sp</item>
+		<item name="android:drawableStart">@drawable/ic_search</item>
+		<item name="android:maxLines">1</item>
+		<item name="android:gravity">center_vertical</item>
+		<item name="android:includeFontPadding">false</item>
+	</style>
+
+    <style name="AppDialogTheme" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+    <style name="TimePeriodChip" parent="Widget.MaterialComponents.Chip.Choice">
+        <item name="chipBackgroundColor">@color/chip_background_selector</item>
+        <item name="chipStrokeColor">@color/chip_stroke_color</item>
+        <item name="chipStrokeWidth">1dp</item>
+        <item name="android:textColor">@color/chip_text_color</item>
+        <item name="chipIconTint">@color/chip_icon_tint</item>
+        <item name="chipMinHeight">28dp</item>
+        <item name="chipCornerRadius">16dp</item>
+        <item name="android:textSize">10sp</item>
+        <item name="chipIconSize">0dp</item>
+        <item name="chipStartPadding">3dp</item>
+        <item name="chipEndPadding">3dp</item>
+    </style>
+
+</resources>
+

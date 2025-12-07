@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="12dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- Search Field -->
+        <EditText
+            android:id="@+id/input_search"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginStart="3dp"
+            android:layout_marginEnd="1dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/search_input_material"
+            android:hint="@string/buscar_apps"
+            android:paddingStart="14dp"
+            android:paddingEnd="40dp"
+            android:gravity="center_vertical"
+            android:includeFontPadding="false"
+            android:textColor="@color/text_primary"
+            android:textColorHint="@color/text_secondary"
+            android:textSize="14sp"
+            android:drawablePadding="8dp"/>
+
+        <!-- Status Filters Section -->
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="-8dp"
+            android:layout_marginTop="-8dp"
+            android:scrollbars="none">
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chip_group_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:singleSelection="false"
+                android:paddingEnd="8dp">
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="1dp">
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_status_all"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Todas"
+                        android:checkable="true"
+                        app:checkedIconVisible="false"
+                        app:chipBackgroundColor="@drawable/chip_background_selector"
+                        style="@style/Widget.MaterialComponents.Chip.Filter" />
+
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="1dp">
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_status_allowed"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Permitidas"
+                        android:checkable="true"
+                        app:checkedIconVisible="false"
+                        app:chipBackgroundColor="@drawable/chip_background_selector"
+                        style="@style/Widget.MaterialComponents.Chip.Filter" />
+
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="1dp">
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_status_blocked"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Bloqueadas"
+                        android:checkable="true"
+                        app:checkedIconVisible="false"
+                        app:chipBackgroundColor="@drawable/chip_background_selector"
+                        style="@style/Widget.MaterialComponents.Chip.Filter" />
+
+                </FrameLayout>
+
+            </com.google.android.material.chip.ChipGroup>
+
+        </HorizontalScrollView>
+
+        <!-- Type Filters Section -->
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="0dp"
+            android:scrollbars="none">
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chip_group_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:singleSelection="false"
+                android:paddingEnd="8dp">
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="1dp">
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_type_all"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/all"
+                        android:checkable="true"
+                        app:checkedIconVisible="false"
+                        app:chipBackgroundColor="@drawable/chip_background_selector"
+                        style="@style/Widget.MaterialComponents.Chip.Filter" />
+
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="1dp">
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_type_user"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Usuario"
+                        android:checkable="true"
+                        app:checkedIconVisible="false"
+                        app:chipBackgroundColor="@drawable/chip_background_selector"
+                        style="@style/Widget.MaterialComponents.Chip.Filter" />
+
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="1dp">
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_type_system"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sistema"
+                        android:checkable="true"
+                        app:checkedIconVisible="false"
+                        app:chipBackgroundColor="@drawable/chip_background_selector"
+                        style="@style/Widget.MaterialComponents.Chip.Filter" />
+
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="1dp">
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_type_internet"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Internet"
+                        android:checkable="true"
+                        app:checkedIconVisible="false"
+                        app:chipBackgroundColor="@drawable/chip_background_selector"
+                        style="@style/Widget.MaterialComponents.Chip.Filter" />
+
+                </FrameLayout>
+
+            </com.google.android.material.chip.ChipGroup>
+
+        </HorizontalScrollView>
+
+    <!-- Apps List - Maximum Space -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view_apps"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:visibility="gone" />
+
+    <!-- Empty State Message -->
+    <LinearLayout
+        android:id="@+id/empty_state_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:src="@drawable/ic_search"
+            android:contentDescription="Sin resultados"
+            android:layout_marginBottom="16dp"
+            android:alpha="0.5"
+            app:tint="@color/text_secondary" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No hay apps"
+            android:textSize="16sp"
+            android:textColor="@color/text_secondary"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No hay aplicaciones que coincidan con los filtros seleccionados"
+            android:textSize="14sp"
+            android:textColor="@color/text_secondary"
+            android:gravity="center"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp" />
+
+    </LinearLayout>
+
+   </LinearLayout>
+
+   <LinearLayout
+        android:id="@+id/loading_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:visibility="gone">
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cargando apps..."
+            android:layout_marginTop="16dp" />
+
+    </LinearLayout>
+
+</FrameLayout>

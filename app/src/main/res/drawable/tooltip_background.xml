@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Fondo principal del tooltip -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="?attr/colorPrimary" />
+            <corners android:radius="12dp" />
+        </shape>
+    </item>
+    
+    <!-- Cola triangular que apunta al FAB -->
+    <item
+        android:gravity="bottom|right"
+        android:right="12dp"
+        android:bottom="-8dp">
+        <rotate android:fromDegrees="45">
+            <shape android:shape="rectangle">
+                <solid android:color="?attr/colorPrimary" />
+                <size
+                    android:width="16dp"
+                    android:height="16dp" />
+            </shape>
+        </rotate>
+    </item>
+</layer-list>

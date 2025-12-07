@@ -1,0 +1,13 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Fondo dinámico (con radius real) -->
+    <solid android:color="?attr/colorSurface"/>
+
+    <!-- Bordes redondeados más marcados -->
+    <corners android:radius="20dp"/>
+
+    <!-- Sombra suave según modo claro/oscuro -->
+    <padding android:left="0dp" android:top="0dp"
+        android:right="0dp" android:bottom="0dp"/>
+
+</shape>

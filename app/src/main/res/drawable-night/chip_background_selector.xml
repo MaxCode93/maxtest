@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Chip seleccionado: Fondo naranja (primary_color) -->
+    <item android:color="?attr/colorPrimary" android:state_checked="true" />
+    <!-- Chip no seleccionado: Fondo superficie oscura -->
+    <item android:color="@color/surface_color" />
+</selector>

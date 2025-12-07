@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Estado seleccionado con indicador superior -->
+    <item android:state_checked="true">
+        <layer-list>
+            <!-- Indicador superior de selección -->
+            <item android:top="0dp" android:left="12dp" android:right="12dp" android:bottom="60dp">
+                <shape android:shape="rectangle">
+                    <solid android:color="?attr/colorPrimary" />
+                    <corners android:radius="2dp" />
+                </shape>
+            </item>
+            <!-- Ripple effect -->
+            <item>
+                <ripple android:color="?attr/colorPrimary">
+                    <item android:id="@android:id/mask">
+                        <shape android:shape="rectangle">
+                            <solid android:color="#2D2D2D" />
+                            <corners android:radius="14dp" />
+                        </shape>
+                    </item>
+                </ripple>
+            </item>
+        </layer-list>
+    </item>
+    
+    <!-- Estado normal con ripple sutil (tema oscuro) -->
+    <item>
+        <ripple android:color="?attr/colorPrimary">
+            <item android:id="@android:id/mask">
+                <shape android:shape="rectangle">
+                    <solid android:color="@android:color/transparent" />
+                    <corners android:radius="12dp" />
+                </shape>
+            </item>
+        </ripple>
+    </item>
+</selector>

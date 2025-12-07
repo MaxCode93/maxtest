@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_app"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp"
+    app:cardElevation="1dp"
+    app:cardCornerRadius="6dp"
+    app:cardBackgroundColor="?attr/colorSurface">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="6dp"
+        android:gravity="center_vertical">
+
+        <!-- Left Side: Icon -->
+        <ImageView
+            android:id="@+id/image_app_icon"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:contentDescription="@string/icono"
+            android:scaleType="centerInside"
+            android:layout_marginEnd="8dp" />
+
+        <!-- Center: App Name and Data Consumption -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center_vertical">
+
+            <!-- App Name -->
+            <TextView
+                android:id="@+id/text_app_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:textColor="?attr/colorOnSurface"
+                tools:text="Nombre de la app" />
+
+            <!-- Data Consumption Row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="2dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/text_download"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="10sp"
+                    android:textColor="?attr/colorOnSurface"
+                    android:alpha="0.6"
+                    tools:text="↓ 125.5 MB"
+                    tools:ignore="SmallSp" />
+
+                <TextView
+                    android:id="@+id/text_upload"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="10sp"
+                    android:textColor="?attr/colorOnSurface"
+                    android:alpha="0.6"
+                    android:layout_marginStart="6dp"
+                    tools:text="↑ 45.2 MB"
+                    tools:ignore="SmallSp" />
+
+                <TextView
+                    android:id="@+id/text_total"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="10sp"
+                    android:textColor="?attr/colorOnSurface"
+                    android:alpha="0.6"
+                    android:layout_marginStart="6dp"
+                    tools:text="Total: 170.7 MB"
+                    tools:ignore="SmallSp" />
+
+                <TextView
+                    android:id="@+id/text_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    android:textColor="?attr/colorOnSurface"
+                    android:layout_marginStart="8dp"
+                    tools:text="@string/app_permitida"
+                    tools:ignore="SmallSp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Right Side: FAB Mini Button -->
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/switch_block"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_marginStart="8dp"
+            android:contentDescription="@string/toggle_bloqueo"
+            android:scaleType="center"
+            app:backgroundTint="@color/good_connection"
+            app:borderWidth="0dp"
+            app:elevation="30dp"
+            app:fabSize="mini"
+            app:pressedTranslationZ="4dp"
+            app:srcCompat="@drawable/ic_lock_open"
+            app:tint="@color/white"
+            app:maxImageSize="21dp" />
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

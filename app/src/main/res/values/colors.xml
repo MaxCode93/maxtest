@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Colores primarios y secundarios (comunes a ambos temas) -->
+    <color name="primary_color">#FF5722</color>
+    <color name="primary_variant">#E64A19</color>
+    <color name="secondary_color">#2196F3</color>
+    <color name="secondary_variant">#1976D2</color>
+    
+    <!-- Colores para tema claro -->
+    <color name="background_color">#F5F5F5</color>
+    <color name="surface_color">#FFFFFF</color>
+    <color name="surface_variant">#F5F5F5</color>
+    <color name="card_background">#FFFFFF</color>
+    
+    <!-- Colores de texto para tema claro -->
+    <color name="text_primary">#212121</color>
+    <color name="text_secondary">#757575</color>
+    
+    <!-- Colores de conexión (comunes a ambos temas) -->
+    <color name="good_connection">#4CAF50</color>
+    <color name="medium_connection">#FFC107</color>
+    <color name="poor_connection">#F44336</color>
+
+    <!-- Colores de utilidad para tema claro -->
+    <color name="divider_color">#1F000000</color>
+    <color name="widget_background">#CC2196F3</color>
+
+    <!-- Colores básicos (comunes a ambos temas) -->
+    <color name="white">#FFFFFFFF</color>
+	
+	<color name="header_gradient_start">#FAFAFA</color>
+	<color name="header_gradient_end">#F0F0F0</color>
+	<color name="button_gradient_start">#FFFFFF</color>
+	<color name="button_gradient_end">#F8F8F8</color>
+	<color name="button_border">#E0E0E0</color>
+	
+    <!-- Descarga -->
+    <color name="speed_download_container_light">#E3F2FD</color>  <!-- azul muy suave -->
+    <color name="speed_download_container_dark">#102135</color>
+    <color name="speed_download_wave_light">#2962FF</color>       <!-- azul intenso -->
+    <color name="speed_download_wave_dark">#82B1FF</color>
+
+    <!-- Carga -->
+    <color name="speed_upload_container_light">#E8F5E9</color>    <!-- verde muy suave -->
+    <color name="speed_upload_container_dark">#0F2F21</color>
+    <color name="speed_upload_wave_light">#FF5722</color>         <!-- verde intenso -->
+    <color name="speed_upload_wave_dark">#FF5722</color>
+	
+	<color name="speed_level_low">#2ECC71</color>     <!-- Verde -->
+    <color name="speed_level_mid">#F1C40F</color>     <!-- Amarillo -->
+    <color name="speed_level_high">#E74C3C</color>    <!-- Rojo -->
+    
+    <!-- Colores para firewall -->
+    <color name="icon_grey_disabled">#BDBDBD</color>
+    <color name="selected_grey">#E0E0E0</color>
+    
+    <!-- Colores para bottom navigation -->
+    <color name="bottom_nav_inactive">#999999</color>
+    <color name="bottom_nav_ripple">#20FF5722</color>
+    <color name="bottom_nav_shadow">#15000000</color>
+
+    <!-- Botón del firewall -->
+    <color name="firewall_orange">#FF9800</color>
+    <color name="firewall_green">#4CAF50</color>
+    <color name="firewall_yellow">#FFC107</color>
+    <color name="firewall_red">#F44336</color>
+
+    <!-- Overlays para efectos visuales -->
+    <color name="black_overlay">#80000000</color>
+    <color name="white_overlay">#80FFFFFF</color>
+
+    <!-- Color para el borde del diálogo que se actualiza con el color primario -->
+    <color name="dialog_border_color">#FF5722</color>
+</resources>

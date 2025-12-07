@@ -1,0 +1,164 @@
+package cu.maxwell.firenetstats.firewall
+
+import android.content.Context
+import android.content.SharedPreferences
+import android.util.Log
+import org.json.JSONObject
+
+class NetStatsFirewallPreferences(context: Context) {
+
+    private val vpnPrefs: SharedPreferences =
+        context.getSharedPreferences(NetStatsFirewallMode.VPN.key, Context.MODE_PRIVATE)
+
+    private val defaultPrefs: SharedPreferences =
+        context.getSharedPreferences("firewall_default_prefs", Context.MODE_PRIVATE)
+
+    private val TAG = "NetStatsFirewallPreferences"
+
+    private fun getPrefs(mode: NetStatsFirewallMode): SharedPreferences {
+        return vpnPrefs
+    }
+
+    private fun getKey(packageName: String, type: String): String {
+        return "${packageName}_${type}"
+    }
+
+    // --- Wi-Fi Controls ---
+
+    fun setWifiBlocked(mode: NetStatsFirewallMode, packageName: String, isBlocked: Boolean) {
+        getPrefs(mode).edit().putBoolean(getKey(packageName, "wifi"), isBlocked).commit()
+    }
+
+    fun isWifiBlocked(mode: NetStatsFirewallMode, packageName: String): Boolean {
+        return getPrefs(mode).getBoolean(getKey(packageName, "wifi"), false)
+    }
+
+    // --- Data Controls ---
+
+    fun setDataBlocked(mode: NetStatsFirewallMode, packageName: String, isBlocked: Boolean) {
+        getPrefs(mode).edit().putBoolean(getKey(packageName, "data"), isBlocked).commit()
+    }
+
+    fun isDataBlocked(mode: NetStatsFirewallMode, packageName: String): Boolean {
+        return getPrefs(mode).getBoolean(getKey(packageName, "data"), false)
+    }
+
+    // --- Master Firewall State ---
+
+    fun setFirewallEnabled(isEnabled: Boolean) {
+        defaultPrefs.edit().putBoolean("is_firewall_enabled", isEnabled).apply()
+    }
+
+    fun isFirewallEnabled(): Boolean {
+        return defaultPrefs.getBoolean("is_firewall_enabled", false)
+    }
+
+    // --- Sort Preference ---
+
+    fun setSortBlockedFirst(isBlockedFirst: Boolean) {
+        defaultPrefs.edit().putBoolean("sort_blocked_first", isBlockedFirst).apply()
+    }
+
+    fun isSortBlockedFirst(): Boolean {
+        return defaultPrefs.getBoolean("sort_blocked_first", false)
+    }
+
+    // --- UI Filter Preferences ---
+
+    fun setStatusFilter(filter: String) {
+        defaultPrefs.edit().putString("status_filter", filter).apply()
+    }
+
+    fun getStatusFilter(): String {
+        return defaultPrefs.getString("status_filter", "all") ?: "all"
+    }
+
+    fun setTypeFilter(filter: String) {
+        defaultPrefs.edit().putString("type_filter", filter).apply()
+    }
+
+    fun getTypeFilter(): String {
+        return defaultPrefs.getString("type_filter", "user") ?: "user"
+    }
+
+    fun setSearchQuery(query: String) {
+        defaultPrefs.edit().putString("firewall_search", query).apply()
+    }
+
+    fun getSearchQuery(): String {
+        return defaultPrefs.getString("firewall_search", "") ?: ""
+    }
+
+    // --- Reboot Reminder Preference ---
+
+    fun setRebootReminder(isEnabled: Boolean) {
+        defaultPrefs.edit().putBoolean("reboot_reminder_enabled", isEnabled).apply()
+    }
+
+    fun isRebootReminderEnabled(): Boolean {
+        return defaultPrefs.getBoolean("reboot_reminder_enabled", false)
+    }
+
+    // --- VPN Helper ---
+
+    fun getBlockedPackagesForNetwork(mode: NetStatsFirewallMode, isWifi: Boolean): Set<String> {
+        val prefs = getPrefs(mode)
+        val blockedPackages = mutableSetOf<String>()
+        val keyType = if (isWifi) "wifi" else "data"
+
+        prefs.all.forEach { (key, value) ->
+            // Find keys that are blocked (value == true)
+            if (value is Boolean && value) {
+                // Check if the key matches the current network type
+                if (key.endsWith(keyType)) {
+                    val packageName = key.substringBeforeLast('_')
+                    if (packageName.isNotEmpty()) {
+                        blockedPackages.add(packageName)
+                    }
+                }
+            }
+        }
+        return blockedPackages
+    }
+
+    // --- Import / Export ---
+
+    fun exportAllSettings(): String? {
+        return try {
+            val masterJson = JSONObject()
+
+            val vpnJson = JSONObject()
+            vpnPrefs.all.forEach { (key, value) ->
+                vpnJson.put(key, value)
+            }
+
+            masterJson.put(NetStatsFirewallMode.VPN.key, vpnJson)
+
+            masterJson.toString(2) // Indent for readability
+        } catch (e: Exception) {
+            Log.e(TAG, "Error exporting settings", e)
+            null
+        }
+    }
+
+    /**
+     * Imports and replaces all settings from a JSON string.
+     */
+    fun importAllSettings(jsonString: String): Boolean {
+        return try {
+            val masterJson = JSONObject(jsonString)
+
+            val vpnJson = masterJson.getJSONObject(NetStatsFirewallMode.VPN.key)
+            val vpnEditor = vpnPrefs.edit().clear()
+            vpnJson.keys().forEach { key ->
+                vpnEditor.putBoolean(key, vpnJson.getBoolean(key))
+            }
+            vpnEditor.commit()
+
+            true
+        } catch (e: Exception) {
+            Log.e(TAG, "Error importing settings", e)
+            false
+        }
+    }
+}

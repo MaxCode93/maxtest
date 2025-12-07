@@ -1,0 +1,250 @@
+<resources>
+    <string name="app_name">FireNetStats</string>		
+	<string name="app_subtitle">Monitor de Red</string>
+    <string name="about_app">Acerca de</string>
+    
+    <!-- Main Activity -->
+    <string name="current_network">Red Actual</string>
+    <string name="download_speed">Velocidad de Descarga</string>
+    <string name="upload_speed">Velocidad de Carga</string>
+    <string name="network_type">Tipo de Red</string>
+    <string name="wifi_name">SSID</string>
+    <string name="ip_address">Dirección IP</string>
+    <string name="signal_strength">Intensidad de Señal</string>
+    <string name="data_usage">Uso de Datos</string>
+    <string name="reset_data_usage">Resetear uso de datos</string>
+    <string name="enable_floating_widget">Activar Widget Flotante</string>
+    <string name="disable_floating_widget">Desactivar Widget Flotante</string>
+    
+    <!-- Widget Settings -->
+    <string name="widget_settings">Configuración del Widget</string>
+	<string name="widget_background_color">Color de fondo</string>
+	<string name="color_default">Predeterminado</string>
+	<string name="color_dark">Oscuro</string>
+	<string name="color_light">Claro</string>
+	<string name="color_transparent">Transparente</string>
+	<string name="color_custom">Personalizado</string>
+    <string name="widget_size">Tamaño</string>
+    <string name="small">Pequeño</string>
+    <string name="medium">Mediano</string>
+    <string name="large">Grande</string>
+    <string name="widget_transparency">Transparencia</string>
+    <string name="display_info">Información a Mostrar</string>
+    <string name="download_only">Descarga</string>
+    <string name="upload_only">Carga</string>
+    <string name="both">Ambas</string>
+    <string name="theme">Tema</string>
+    <string name="light">Claro</string>
+    <string name="dark">Oscuro</string>
+    <string name="save">Guardar</string>
+    <string name="cancel">Cancelar</string>
+	<string name="reset_settings">Reiniciar</string>
+	<string name="reset_confirmation">¿Estás seguro de que deseas restablecer todos los ajustes a sus valores predeterminados?</string>
+	<string name="yes">Sí</string>
+	<string name="no">No</string>
+	
+    <!-- Notifications -->
+    <string name="service_notification_title">FireNetStats Activo</string>
+    <string name="service_notification_text">Monitoreando estadísticas de red</string>
+    
+    <!-- Update System -->
+    <string name="check_for_updates">Buscar actualizaciones</string>
+    <string name="update_available">Nueva versión disponible</string>
+    <string name="update_available_title">📦 Nueva versión disponible: %1$s</string>
+    <string name="update_changelog">Cambios</string>
+    <string name="update_free_download">ℹ️  Descarga gratuita desde ApkLis</string>
+    <string name="update_download">Descargar</string>
+    <string name="update_cancel">Cancelar</string>
+    <string name="update_error">Error al verificar actualizaciones</string>
+    <string name="update_checking">Verificando actualizaciones...</string>
+    <string name="update_no_new">Tu aplicación está actualizada</string>
+    <string name="update_current_version">Versión actual: %1$s</string>
+    <string name="update_new_version">Versión disponible: %1$s</string>
+    
+    <!-- Errors and Messages -->
+    <string name="overlay_permission_message">Esta aplicación necesita permiso para dibujar sobre otras apps</string>
+    <string name="go_to_settings">Ir a Configuración</string>
+    <string name="not_connected">Desconectado</string>
+    <string name="tipo_de_red">WiFi</string>
+    <string name="nombre_de_red">Maxwell_WiFi</string>
+    <string name="potencia_de_señal">Excelente</string>
+    <string name="consumo_de_red">245 MB</string>
+    <string name="historial_de_velocidad">Historial de Velocidad</string>
+    <string name="about_changelog">v1.3.0:\n- Mejora en el rendimiento del listado de apps.\nv1.2.1:\n- Corrección de errores menores y mejoras visuales.\nv1.2.0:\n- Añadido selector de período y búsqueda de apps.</string>
+    <string name="about_changelog_title">Historial de Cambios</string>
+
+    <!-- Firewall Strings -->
+    <string name="notification_permission_required">Se requiere permiso de notificaciones para recordatorios de reinicio</string>
+    <string name="master_disable">Desactivar Firewall</string>
+    <string name="master_enable">Activar Firewall</string>
+    <string name="selection_title_zero">Seleccionar apps</string>
+    <string name="selection_title_one">1 app seleccionada</string>
+    <string name="selection_title_many">%d apps seleccionadas</string>
+    <string name="export_failed">Error al exportar configuración</string>
+    <string name="export_success">Configuración exportada correctamente</string>
+    <string name="import_failed">Error al importar configuración</string>
+    <string name="import_success">Configuración importada correctamente</string>
+    <string name="sort_dialog_title">Ordenar y Filtrar</string>
+    <string name="help_title">Ayuda</string>
+    <string name="help_donate_toast">Dirección copiada al portapapeles</string>
+    <string name="reboot_notification_title">Firewall Desactivado</string>
+    <string name="reboot_notification_text">Reactiva el firewall después del reinicio</string>
+    <string name="reboot_notification_channel_name">Recordatorio de Firewall</string>
+    <string name="firewall_title">Control del firewall</string>
+    <string name="firewall_subtitle">Gestiona el acceso a internet de tus aplicaciones</string>
+    <string name="firewall_search_hint">Buscar apps instaladas</string>
+    <string name="firewall_status_filter">Estado</string>
+    <string name="firewall_type_filter">Tipo de app</string>
+    <string name="firewall_filters_persist">Los filtros se mantienen activos mientras la app esté abierta.</string>
+    <string name="filter_all">Todo</string>
+    <string name="filter_allowed">Permitidas</string>
+    <string name="filter_blocked">Bloqueadas</string>
+    <string name="filter_all_types">Todo</string>
+    <string name="filter_user">Usuario</string>
+    <string name="filter_system">Sistema</string>
+    <string name="filter_internet">Internet</string>
+    <string name="loading_apps">Cargando aplicaciones…</string>
+    <string name="firewall_status_allowed">Permitida</string>
+    <string name="firewall_status_blocked">Bloqueada</string>
+    <string name="firewall_badge_system">Sistema</string>
+    <string name="firewall_badge_user">Usuario</string>
+    <string name="firewall_badge_internet">Permiso de internet</string>
+
+    <!-- Intercept Notifications -->
+    <string name="intercept_notification_title">%s intenta acceder a internet</string>
+    <string name="intercept_notification_text">Toca para permitir o bloquear</string>
+    <string name="intercept_notification_channel_name">Intentos de Acceso</string>
+    <string name="intercept_dialog_title">Intento de Acceso a Internet</string>
+    <string name="intercept_dialog_message">Esta app intenta acceder a internet</string>
+    <string name="intercept_allow">Permitir</string>
+    <string name="intercept_block">Bloquear</string>
+    <string name="intercept_notifications_setting">Notificar intentos de acceso</string>
+    <string name="intercept_notifications_desc">Muestra notificaciones cuando apps bloqueadas intenten acceder a internet</string>
+
+    <!-- Menu Strings -->
+    <string name="menu_search">Buscar</string>
+    <string name="menu_sort">Ordenar</string>
+    <string name="menu_refresh">Actualizar</string>
+    <string name="menu_export">Exportar</string>
+    <string name="menu_import">Importar</string>
+    <string name="menu_reboot_reminder">Recordatorio de reinicio</string>
+    
+    <!-- Settings -->
+    <string name="open">Abrir</string>
+    <string name="settings_display">Pantalla</string>
+    <string name="settings_app_theme">Tema de la App</string>
+    <string name="settings_app_theme_desc">Selecciona el tema y el color de la app</string>
+    <string name="settings_theme_auto">Automático</string>
+    <string name="settings_theme_light">Claro</string>
+    <string name="settings_theme_dark">Oscuro</string>
+    <string name="settings_start_screen">Pantalla de Inicio</string>
+    <string name="settings_start_screen_desc">Elige dónde iniciar la app al abrirla</string>
+    <string name="settings_screen_home">Inicio</string>
+    <string name="settings_screen_firewall">Firewall</string>
+    <string name="settings_startup">Iniciar con el Sistema</string>
+    <string name="settings_startup_desc">Inicia la app automáticamente</string>
+    <string name="settings_startup_components">¿Qué componentes inician?</string>
+    <string name="settings_startup_widget">Widget</string>
+    <string name="settings_startup_firewall">Firewall</string>
+    <string name="settings_startup_both">Ambos</string>
+    <string name="settings_notifications">Notificaciones</string>
+    <string name="settings_enable_notifications">Activar Notificaciones</string>
+    <string name="settings_enable_notifications_desc">Recibir notificaciones de la app</string>
+    <string name="settings_notification_sound">Sonido de Notificación</string>
+    <string name="settings_notification_sound_desc">Reproducir sonido para notificaciones</string>
+    <string name="settings_app_settings">Configuración de la App</string>
+    <string name="settings_auto_update">Actualización Automática</string>
+    <string name="settings_auto_update_desc">Verificar automáticamente actualizaciones de la app</string>
+    <string name="settings_clear_cache">Limpiar Caché</string>
+    <string name="settings_clear_cache_desc">Liberar espacio de almacenamiento</string>
+    <string name="settings_privacy_policy">Política de Privacidad</string>
+    <string name="settings_privacy_policy_desc">Leer nuestra política de privacidad</string>
+    <string name="settings_about">Acerca de</string>
+    <string name="settings_app_version">Versión de la App</string>
+    <string name="settings_version_placeholder">Versión 1.0.0</string>
+    <string name="settings_more_info">Más Información</string>
+    <string name="settings_more_info_desc">Visita nuestro sitio web o consulta la documentación</string>
+    <string name="ajustes_globales">Ajustes</string>
+    <string name="firewall">Firewall</string>
+    <string name="home">Inicio</string>
+    <string name="select_all">Todo</string>
+    <string name="refresh">Actualizar</string>
+    <string name="export">Exportar</string>
+    <string name="firewall_import">Importar</string>
+    <string name="reboot_reminder">Recordar el Reiniciar</string>
+    
+    <!-- Fragment subtitles -->
+    <string name="subtitle_home">Inicio</string>
+    <string name="subtitle_firewall">Cortafuegos</string>
+    <string name="subtitle_settings">Ajustes de la app</string>
+    
+    <!-- Firewall Toggle -->
+    <string name="master_firewall_title">Firewall</string>
+    <string name="firewall_status_on">Estado: Activo</string>
+    <string name="firewall_status_off">Estado: Inactivo</string>
+    <string name="toggle_bloqueo">Toggle bloqueo</string>
+    <string name="icono">Icono</string>
+
+    <!-- Home layout -->
+    <string name="seleccionar_color">Seleccionar color</string>
+    <string name="buscar_apps">Buscar apps...</string>
+    <string name="ip_defult">0.0.0.0</string>
+    <string name="consumo_de_datos">Consumo de Datos</string>
+    <string name="per_odo_de_tiempo">Período de tiempo</string>
+    <string name="se_requiere_permiso_para_mostrar_el_consumo_de_aplicaciones">Se requiere permiso para mostrar el consumo de aplicaciones</string>
+    <string name="ve_a_configuraci_n_acceso_especial_uso_de_datos_y_activa_el_permiso_para_esta_app">Ve a Configuración > Acceso Especial > Uso de Datos y activa el permiso para esta app</string>
+    <string name="ir_a_configuraci_n">Ir a Configuración</string>
+    <string name="cargando_apps">Cargando apps…</string>
+
+    <!-- VPN Always On Settings -->
+    <string name="vpn_always_on_setting">VPN Siempre Activo</string>
+    <string name="vpn_always_on_desc">Habilita VPN permanente en los ajustes del dispositivo</string>
+    <string name="vpn_permission_required_title">Permiso VPN requerido</string>
+    <string name="vpn_permission_required_message">Para activar el firewall, la app necesita permiso para crear una conexión VPN. Concédelo en la siguiente pantalla para continuar.</string>
+    <string name="vpn_permission_required_positive">Entendido</string>
+    <string name="auto_iniciar">Comportamiento</string>
+    <string name="sin_permiso_de_ubicacion">Sin permiso de ubicación</string>
+    <string name="obteniendo">Obteniendo...</string>
+    <string name="excelente">Excelente</string>
+    <string name="moderada">Moderada</string>
+    <string name="d_bil">Débil</string>
+    <string name="desconocida">Desconocida</string>
+
+    <!-- Permissions Section -->
+    <string name="permissions_section">Permisos y Acceso</string>
+    <string name="permission_location_fine">Ubicación Precisa</string>
+    <string name="permission_location_fine_desc">Para mostrar nombre de la red WiFi</string>
+    <string name="permission_location_coarse">Ubicación General</string>
+    <string name="permission_location_coarse_desc">Información de ubicación aproximada</string>
+    <string name="permission_usage_stats">Datos de Uso</string>
+    <string name="permission_usage_stats_desc">Acceso a estadísticas de uso de apps</string>
+    <string name="permission_vpn">Permiso VPN</string>
+    <string name="permission_vpn_desc">Necesario para activar el Firewall</string>
+    <string name="permission_overlay">Ventanas Superpuestas</string>
+    <string name="permission_overlay_desc">Para mostrar el widget flotante</string>
+    <string name="permission_grant">Conceder</string>
+    <string name="permission_granted">Concedido</string>
+    <string name="permission_denied">Denegado</string>
+    <string name="permission_required">Requerido</string>
+    <string name="info_acerca_de">Monitorea tu conexión en tiempo real con widget flotante y firewall avanzado.</string>
+    <string name="whatsapp_contact">WhatsApp</string>
+    <string name="donate_developer">Donar al Desarrollador</string>
+    <string name="donate_title">❤️ Apoya el Desarrollo</string>
+    <string name="donate_message">Con tus donaciones mantenemos FireNetStats completamente GRATUITA sin publicidad</string>
+    <string name="donate_button">💳 Donar Ahora</string>
+    <string name="notificaciones">Notificaciones</string>
+    <string name="mostrar_intentos_de_acceso_a_internet">Para mostrar intentos de acceso a internet</string>
+    <string name="aplicaciones">Aplicaciones</string>
+    <string name="velocidad">Velocidad</string>
+    <string name="estad_sticas_de_velocidad">Estadísticas de Velocidad</string>
+    <string name="descarga_y_carga">Descarga y Carga</string>
+    <string name="all">Todas</string>
+    <string name="color_primario">Color Primario</string>
+    <string name="si">Si</string>
+    <string name="total">Total</string>
+    <string name="mes">Mes</string>
+    <string name="semana">Semana</string>
+    <string name="hoy">Hoy</string>
+    <string name="consumo">Consumo</string>
+
+</resources>
